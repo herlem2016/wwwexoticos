@@ -1,0 +1,33 @@
+﻿body {font-family:Verdana;}
+h2{margin-top:0px;}
+h2 button{padding:10px;width:100%;display:block;margin-top:0px;border:0px;cursor:pointer;color:#ffffff;background:red;font-size:21px;} 
+h2 button img{width:14px; position:absolute;left:10px;}
+ul{list-style:none;padding:0px;}
+ul li{padding:1%;}
+ul li button{padding:10px;width:90%;display:block;margin:auto; border-radius:10px;border:0px;margin-top:4px;cursor:pointer;color:#ffffff;background:red;font-size:21px;} 
+ul li img{width:14px; position:absolute;right:30px;}
+
+body ul li button.verde{background:green;}
+body ul li button.amarillo{background:yellow;}
+ul li button.big{border-radius:40px;margin-top:15px;} 
+ul li button.big b{font-size:16px;} 
+ul li button.big span{font-size:13px;} 
+
+button.vermas{background:transparent;width:27%;margin:auto;border:none;display:block;} 
+button.vermas img{width:100%;position:initial;} 
+
+div.posts, div.frm-publicar{padding:10px;margin:20px;border:1px solid #333;}
+div.post{padding:10px;clear:both;margin-top:10px;}
+div.post img{max-width:100%;max-height:200px;display:block;margin:auto;}
+div.post b{font-size:13px;}
+div.post i{font-size:12px;}
+div.post p{font-size:12px;}
+div.frm-publicar{padding:0px;}
+div.frm-publicar h3{background:#ff4040;color:#b1b0b0;padding:5px;margin:0px;text-align:center;}
+ul.menu-intermedio{margin-top:50px;margin-bottom:40px;}
+ul.menu-intermedio li button{font-size:14px;}
+ul.menu-intermedio li b{font-size:12px;}
+ul.menu-intermedio li i{font-size:11px;}
+
+
+

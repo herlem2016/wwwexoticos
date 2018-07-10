@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html style="height:100%;">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        screen.orientation.addEventListener('change', function () {
+            console.log('new orientation is ', screen.orientation.type);
+        });
+    </script>
+    <link href="index.css" rel="stylesheet" />
+    <style>
+        .galeria{width:90%;margin:auto;}
+        .galeria img{width:45%;float:left;margin-left:5%;margin-bottom:5px;}
+    </style>
+</head>
+<body style="margin:0px;height:100%;line-height:100%;">
+    <h2><button><img src="media/flecha.png" />GALERÍA</button></h2>
+    <div class="galeria">
+        <img src="galeria/gal1.PNG" />
+        <img src="galeria/gal2.PNG" />
+        <img src="galeria/gal3.PNG" />
+        <img src="galeria/gal4.PNG" />
+        <img src="galeria/gal5.PNG" />
+        <img src="galeria/gal6.PNG" />
+        <img src="galeria/gal7.PNG" />
+        <img src="galeria/gal8.PNG" />
+        <img src="galeria/gal9.PNG" />
+    </div>
+</body>
+</html>

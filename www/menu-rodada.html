@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html style="height:100%;">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        screen.orientation.addEventListener('change', function () {
+            console.log('new orientation is ', screen.orientation.type);
+        });
+    </script>
+    <link href="index.css" rel="stylesheet" />
+    <style>
+        ul.menu-intermedio{margin: 0px;line-height: initial;}
+        ul.menu-intermedio li{padding: 0px;}
+        ul.menu-intermedio li button{width:100%;font-size:12px;}
+    </style>
+</head>
+<body style="margin:0px;height:100%;line-height:100%;">
+    <h2 style="margin-bottom:0px;"><button><img src="media/flecha.png" />CARRERA 05-JUN-18</button></h2>
+    <img src="media/rodada.png" style="width:100%;margin:0px;" />
+    <ul class="menu-intermedio" style="margin:20px;margin-top:0px;">
+        <li><b>FECHA:</b><i>SABADO 05 DE JUNIO DEL 2018</i></li>
+        <li><b>LUGAR:</b><i>AUTODROMO DE PUEBLA</i></li>
+        <li><b>HORARIO:</b><i>09:00 HRS</i></li>
+        <li><b>COSTO:</b><i>$ 15,00.00 PESOS</i></li>
+        <li><b>DETALLES:</b><i>6</i></li>
+        <li><b>LINK UBICACIÓN:</b><i>https://maps.google.com/x=0.00084165&y=658654165.05</i></li>
+        <li><button>CONFIRMAR SOLO ASISTENCIA</button></li>
+        <li><button>CONFIRMAR ASISTENCIA Y CONFIRMAR PAGO</button></li>
+    </ul>
+    <img src="media/logo.png" style="width:60%;display:block;margin:auto;margin-top:20px;" />
+</body>
+</html>
