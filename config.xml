@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<widget xmlns   = "http://www.w3.org/ns/widgets"
-    xmlns:gap   = "http://phonegap.com/ns/1.0"
-    id          = "com.phonegap.exoticosvip"
-    versionCode = "10"
-    version     = "1.0.0" >
+<widget id="exoticosvip.car" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+
+<!-- versionCode is optional and Android only -->
+
   <name>PhoneGap Example</name>
+
   <description>
       Solo Exoticos
   </description>
-  <author href="https://mediapp.com" email="hugoochoa.v@gmail.com">
+
+  <author href="https://mediapp.com" email="v.hugoochoa.s@gmail.com">
       Mediapp, Desarrollo Creativo S.A. de C.V.
   </author>
     
