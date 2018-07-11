@@ -54,20 +54,5 @@
         <gap:plugin name="com.phonegap.plugins.barcodescanner" />
     -->
 
-    <!-- Define app icon for each platform. -->
-    <icon src="www/media/logo.png" />
-    <icon src="www/media/logo.png" gap:platform="android"    gap:qualifier="ldpi" />
-    <icon src="www/media/logo.png" gap:platform="android"    gap:qualifier="mdpi" />
-    <icon src="www/media/logo.png" gap:platform="android"    gap:qualifier="hdpi" />
-    <icon src="www/media/logo.png" gap:platform="android"    gap:qualifier="xhdpi" />
-    <icon src="www/media/logo.png" gap:platform="blackberry" />
-    <icon src="www/media/logo.png" gap:platform="blackberry" gap:state="hover"/>
-    <icon src="www/media/logo.png" gap:platform="ios"        width="57" height="57" />
-    <icon src="www/media/logo.png" gap:platform="ios"        width="72" height="72" />
-    <icon src="www/media/logo.png" gap:platform="ios"        width="114" height="114" />
-    <icon src="www/media/logo.png" gap:platform="ios"        width="144" height="144" />
-    <icon src="www/media/logo.png" gap:platform="webos" />
-    <icon src="www/media/logo.png" gap:platform="winphone" />
-    <icon src="www/media/logo.png"" gap:platform="winphone"   gap:role="background" />
-
+   
 </widget>
