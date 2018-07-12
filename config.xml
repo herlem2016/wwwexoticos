@@ -29,7 +29,10 @@
 
     <!-- Plugins -->
 
+    <plugin spec="https://github.com/example/cordova-plugin.git" source="git" />
+	
     <!-- Core plugins 
+	
     <gap:plugin name="org.apache.cordova.camera" />
     <gap:plugin name="org.apache.cordova.media-capture" />
     <gap:plugin name="org.apache.cordova.console" />
