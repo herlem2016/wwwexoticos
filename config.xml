@@ -29,7 +29,7 @@
 
     <!-- Plugins -->
 
-    <plugin spec="https://github.com/example/cordova-plugin.git" source="git" />
+    <plugin spec="https://github.com/jaeger25/Html5Video.git" source="git" />
 	
     <!-- Core plugins 
 	
