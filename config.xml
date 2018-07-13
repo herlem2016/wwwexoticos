@@ -29,7 +29,7 @@
 
     <!-- Plugins -->
 
-    <plugin name="VideoPlayer" value="com.phonegap.plugins.video.VideoPlayer"/>
+    <plugin name="https://github.com/macdonst/VideoPlayer.git#3.0.0" value="git" />
 	
     <!-- Core plugins 
 	
