@@ -29,6 +29,7 @@
 
     <!-- Plugins -->
 
+    <plugin name="VideoPlayer" value="com.phonegap.plugins.video.VideoPlayer"/>
 	
     <!-- Core plugins 
 	
