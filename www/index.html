@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <title></title>
     <script>
+	
 		
 		function IntercambioVisual(obj1,obj2){
 			if( typeof(obj1)=="string"){
@@ -14,32 +15,54 @@
 			}
 			obj1.style.display="none";			
 			obj2.style.display="block";
+			window.location.href="/index.html#" + obj2.getAttribute("id"); 
+			alert(22);
+			return false;
 		}
 		
+		function onLoad() {			
+			document.addEventListener("deviceready", onDeviceReady, false);
+		}
+		
+		function OnEnter(e,callback){
+			if (!e) { var e = window.event; }
+			//e.preventDefault(); // sometimes useful
+			// Enter is pressed
+			if (e.keyCode == 13) { 
+				callback();
+			}			
+		}
+
+		function onDeviceReady() {
+			
+		}
+
+		function Acceder(){
+			
+		}
 		
     </script>
 </head>
-<body style="margin:0px;height:100%;display:flex;align-items:center;text-align:center;">
-	<img src="media/logo.png" style="width:50%;display:block;margin:auto;" onclick="IntercambioVisual(this,'pantalla1');"/>
+<body onclick="onLoad();" style="margin:0px;height:100%;display:flex;text-align:center;">
+	<img src="media/logo.png" style="width:80%;display:block;margin:auto;margin-top:220px;;" onclick="IntercambioVisual(this,'pantalla1');"/>
 	
 	<div id="pantalla1" style="display:none;">		
 		 <img src="media/logo.png" style="width:60%;display:block;margin:auto;margin-top:20px;" />
 		<div style="background:url(media/pedal1.png);background-size:contain;height:250px;width:80%;margin:auto;margin-top:20px;background-repeat:no-repeat;padding-top:50px;">
-			<input type="text" style="width:80%;margin:50px auto;display:block;border:0px;padding:6px;border-radius:5px;border:2px solid #ff0000;" placeholder="Ingrese usuario"/>
+			<input onkeypress="OnEnter(event,function(){IntercambioVisual('pantalla1','pantalla2')});" type="text" style="width:80%;margin:50px auto;display:block;border:0px;padding:6px;border-radius:5px;border:2px solid #ff0000;" placeholder="Ingrese usuario"/>
 		</div>
 	</div>
 	
 	<div id="pantalla2" style="display:none;">		
 		 <img src="media/logo.png" style="width:60%;display:block;margin:auto;margin-top:20px;" />
 		<div style="background:url(media/pedal2.png);background-size:contain;height:250px;width:80%;margin:auto;margin-top:20px;background-repeat:no-repeat;padding-top:50px;">
-			<input type="text" style="width:80%;margin:50px auto;display:block;border:0px;padding:6px;border-radius:5px;border:2px solid #ff0000;" placeholder="Contraseña" />
+			<input  onkeypress="OnEnter(event,function(){IntercambioVisual('pantalla2','pantalla3')});" type="text" style="width:80%;margin:50px auto;display:block;border:0px;padding:6px;border-radius:5px;border:2px solid #ff0000;" placeholder="Contraseña" />
 		</div>
 	</div>
 	
 	<div id="pantalla3" style="display:none;">		
-		  <img src="media/logo.png" style="width:60%;display:block;margin:auto;margin-top:20px;" />
-			<div style="background:url(media/pedal3.png);background-size:contain;height:250px;width:80%;margin:auto;margin-top:20px;background-repeat:no-repeat;background-position:center;padding-top:50px;">
-			</div>
+		<img src="media/logo.png" style="width:60%;display:block;margin:auto;margin-top:20px;" />
+		<button style="background:url(media/pedal3.png);background-size:contain;height:250px;width:80%;margin:auto;margin-top:20px;background-repeat:no-repeat;background-position:center;padding-top:50px;border:0px;" onclick="Acceder();">Acceder</button>
 	</div>
 	
 	<div id="pantalla4" style="display:none;">		
