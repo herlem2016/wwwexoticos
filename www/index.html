@@ -5,8 +5,9 @@
     <title></title>
     <link href="index.css" rel="stylesheet" />
 	<style>
-		h2{position:fixed;left:0px;top:0px;}
+		h2{position:fixed;left:0px;top:0px;width:100%;}
 		.submenu-cont{margin-top:50px;}
+		div{width:100%;}
 	</style>
     <script>
 	
@@ -70,12 +71,12 @@
 	<div id="pantalla4" style="display:none;">	
 		<img src="media/logo.png" style="width:60%;display:block;margin:auto;margin-top:20px;" />
 		<ul>
-			<li><button>EVENTOS<img src="media/flecha.png"/></button></li>
-			<li><button>COMUNIDAD<img src="media/flecha.png" /></button></li>
-			<li><button>CARRERA<img src="media/flecha.png" /></button></li>
-			<li><button>MIS TIEMPOS<img src="media/flecha.png" /></button></li>
-			<li><button>MI GALERIA<img src="media/flecha.png" /></button></li>
-			<li><button>CONTÁCTO<img src="media/flecha.png" /></button></li>
+			<li><button onclick="IntercambioVisual('pantalla4','pantalla5');">EVENTOS<img src="media/flecha.png"/></button></li>
+			<li><button onclick="IntercambioVisual('pantalla3','pantalla4');">COMUNIDAD<img src="media/flecha.png" /></button></li>
+			<li><button onclick="IntercambioVisual('pantalla3','pantalla4');">CARRERA<img src="media/flecha.png" /></button></li>
+			<li><button onclick="IntercambioVisual('pantalla3','pantalla4');">MIS TIEMPOS<img src="media/flecha.png" /></button></li>
+			<li><button onclick="IntercambioVisual('pantalla3','pantalla4');">MI GALERIA<img src="media/flecha.png" /></button></li>
+			<li><button onclick="IntercambioVisual('pantalla3','pantalla4');">CONTÁCTO<img src="media/flecha.png" /></button></li>
 		</ul>
 	</div>
 	
