@@ -3,6 +3,11 @@
 <head>
     <meta charset="utf-8" />
     <title></title>
+    <link href="index.css" rel="stylesheet" />
+	<style>
+		h2{position:fixed;left:0px;top:0px;}
+		.submenu-cont{margin-top:50px;}
+	</style>
     <script>
 	
 		
@@ -59,15 +64,30 @@
 	
 	<div id="pantalla3" style="display:none;">		
 		<img src="media/logo.png" style="width:60%;display:block;margin:auto;margin-top:20px;" />
-		<button style="background:url(media/pedal3.png);background-size:contain;height:250px;width:80%;margin:auto;margin-top:20px;background-repeat:no-repeat;background-position:center;padding-top:50px;border:0px;" onclick="Acceder();">Acceder</button>
+		<button onkeypress="OnEnter(event,function(){IntercambioVisual('pantalla3','pantalla4')});" style="background:url(media/pedal3.png);background-size:contain;height:250px;width:80%;margin:auto;margin-top:20px;background-repeat:no-repeat;background-position:center;padding-top:50px;border:0px;" onclick="Acceder();">Acceder</button>
 	</div>
 	
-	<div id="pantalla4" style="display:none;">		
-		
+	<div id="pantalla4" style="display:none;">	
+		<img src="media/logo.png" style="width:60%;display:block;margin:auto;margin-top:20px;" />
+		<ul>
+			<li><button>EVENTOS<img src="media/flecha.png"/></button></li>
+			<li><button>COMUNIDAD<img src="media/flecha.png" /></button></li>
+			<li><button>CARRERA<img src="media/flecha.png" /></button></li>
+			<li><button>MIS TIEMPOS<img src="media/flecha.png" /></button></li>
+			<li><button>MI GALERIA<img src="media/flecha.png" /></button></li>
+			<li><button>CONTÁCTO<img src="media/flecha.png" /></button></li>
+		</ul>
 	</div>
 	
 	<div id="pantalla5" style="display:none;">		
-		
+		<h2><button><img src="media/flecha.png" />EVENTOS</button></h2>		
+		<ul class="submenu-cont">
+			<li><button class="big verde"><b>RODADA 22 DE AGOSTO</b><br/><span>PROXIMAMENTE(VER DETALLES)</span></button></li>
+			<li><button class="big amarillo"><b>RODADA 08 DE AGOSTO</b><br /><span>A TIEMPO(CONFIRMA TU ASISTENCIA)</span></button></li>
+			<li><button class="big rojo"><b>TRACK DAY 28 DE JULIO</b><br /><span>EVENTO FINALIZADO(VER GALERÍA)</span></button></li>
+			<li><button class="big rojo"><b>TRACK DAY 06 DE JULIO</b><br /><span>EVENTO FINALIZADO(VER GALERÍA)</span></button></li>
+			<li><button class="vermas"><img src="media/Vermas.png"/></button></li>
+		</ul>
 	</div>
 	
 	<div id="pantalla6" style="display:none;">		
