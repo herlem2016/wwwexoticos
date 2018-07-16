@@ -8,6 +8,9 @@
 		h2{position:fixed;left:0px;top:0px;width:100%;}
 		.submenu-cont{margin-top:50px;}
 		div{width:100%;}
+		.contacto{}
+		.contacto input,.contacto textarea{width:80%;border:red solid 2px;padding:5px;margin:auto;display:block;margin-bottom:30px;}
+		.contacto textarea{height:40px;}
 	</style>
     <script>
 	
@@ -81,7 +84,7 @@
 	</div>
 	
 	<div id="pantalla5" style="display:none;">		
-		<h2><button><img src="media/flecha.png" onclick="IntercambioVisual('pantalla5','pantalla4');" /><span>EVENTOS</span></button></h2>		
+		<h2><button onclick="IntercambioVisual('pantalla5','pantalla4');"><img src="media/flecha.png" /><span>EVENTOS</span></button></h2>		
 		<ul class="submenu-cont">
 			<li><button class="big verde" onclick="IntercambioVisual('pantalla5','pantalla11');"><b>RODADA 22 DE AGOSTO</b><br/><span>PROXIMAMENTE(VER DETALLES)</span></button></li>
 			<li><button class="big amarillo"><b>RODADA 08 DE AGOSTO</b><br /><span>A TIEMPO(CONFIRMA TU ASISTENCIA)</span></button></li>
@@ -92,7 +95,7 @@
 	</div>
 	
 	<div id="pantalla6" style="display:none;">		
-		<h2><button><img  onclick="IntercambioVisual('pantalla6','pantalla4');" src="media/flecha.png" />COMUNIDAD</button></h2>
+		<h2><button  onclick="IntercambioVisual('pantalla6','pantalla4');" ><imgsrc="media/flecha.png" />COMUNIDAD</button></h2>
 		<div class="posts submenu-cont">
 			<div class="post">
 				<b>Javier:</b><i></i>
@@ -115,12 +118,12 @@
 	</div>
 	
 	<div id="pantalla7" style="display:none;">		
-		<h2><button><img src="media/flecha.png" onclick="IntercambioVisual('pantalla7','pantalla4');"  />CARRERAS</button></h2>
+		<h2><button onclick="IntercambioVisual('pantalla7','pantalla4');" ><img src="media/flecha.png" />CARRERAS</button></h2>
 		
 	</div>
 	
 	<div id="pantalla8" style="display:none;">		
-		<h2><button><img src="media/flecha.png"  onclick="IntercambioVisual('pantalla8','pantalla4');" />MIS TIEMPOS</button></h2>
+		<h2><button onclick="IntercambioVisual('pantalla8','pantalla4');"><img src="media/flecha.png"  />MIS TIEMPOS</button></h2>
 		<ul class="menu-intermedio submenu-cont">
 			<li><button onclick="IntercambioVisual('pantalla8','pantalla12');">CARRERA 15-JUL-2018</button></li>
 			<li><button>CARRERA 18-JUN-2018</button></li>
@@ -131,7 +134,7 @@
 	</div>
 	
 	<div id="pantalla9" style="display:none;">		
-		<h2><button><img src="media/flecha.png" onclick="IntercambioVisual('9','pantalla4');"  />GALERÍA</button></h2>
+		<h2><button onclick="IntercambioVisual('pantalla9','pantalla4');" ><img src="media/flecha.png" />GALERÍA</button></h2>
 		<div class="galeria submenu-cont">
 			<img src="galeria/gal1.PNG" />
 			<img src="galeria/gal2.PNG" />
@@ -146,9 +149,9 @@
 	</div>
 	
 	<div id="pantalla10" style="display:none;">		
-		<h2><button><img src="media/flecha.png" onclick="IntercambioVisual('10','pantalla4');"  />CONTACTO</button></h2>
-		<div class=" submenu-cont">
-			<input placeholder="Nombre" />
+		<h2><button onclick="IntercambioVisual('pantalla10','pantalla4');"><img src="media/flecha.png"  />CONTACTO</button></h2>
+		<div class=" submenu-cont contacto">
+			<input placeholder="Nombre" style="margin-top:100px;"/>
 			<input placeholder="E-mail" />
 			<label>Escriba su mensaje</label>
 			<textarea></textarea>
@@ -156,7 +159,7 @@
 	</div>
 	
 	<div id="pantalla11" style="display:none;">		
-		<h2 style="margin-bottom:0px;"><button><img src="media/flecha.png"  onclick="IntercambioVisual('pantalla11','pantalla4');" />CARRERA 05-JUN-18</button></h2>
+		<h2 style="margin-bottom:0px;"><button onclick="IntercambioVisual('pantalla11','pantalla4');" ><img src="media/flecha.png" />CARRERA 05-JUN-18</button></h2>
 		<img src="media/rodada.png" style="width:100%;margin:0px;" />
 		<ul class="menu-intermedio submenu-cont" style="margin:20px;margin-top:0px;">
 			<li><b>FECHA:</b><i>SABADO 05 DE JUNIO DEL 2018</i></li>
@@ -172,7 +175,7 @@
 	</div>
 	
 	<div id="pantalla12" style="display:none;">		
-		<h2><button><img src="media/flecha.png"  onclick="IntercambioVisual('pantalla12','pantalla8');"  />CARRERA 05-JUN-18</button></h2>
+		<h2><button onclick="IntercambioVisual('pantalla12','pantalla8');" ><img src="media/flecha.png"  />CARRERA 05-JUN-18</button></h2>
 		<ul class="menu-intermedio submenu-cont" style="margin:20px;">
 			<li><b>FECHA:</b><i>SABADO 05 DE JUNIO DEL 2018</i></li>
 			<li><b>LUGAR:</b><i>AUTODROMO DE PUEBLA</i></li>
