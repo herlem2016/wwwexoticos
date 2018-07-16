@@ -16,7 +16,7 @@ ul li button.big span{font-size:13px;}
 button.vermas{background:transparent;width:27%;margin:auto;border:none;display:block;} 
 button.vermas img{width:100%;position:initial;} 
 
-div.posts, div.frm-publicar{padding:10px;margin:20px;border:1px solid #333;}
+div.posts, div.frm-publicar{border:1px solid #333;}
 div.post{padding:10px;clear:both;margin-top:10px;}
 div.post img{max-width:100%;max-height:200px;display:block;margin:auto;}
 div.post b{font-size:13px;}
