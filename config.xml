@@ -12,9 +12,7 @@
   <author href="https://mediapp.biz" email="v.hugoochoa.s@gmail.biz">
       Mediapp, Desarrollo Creativo S.A. de C.V.
   </author>
-    <platform name="ios">
-		<icon height="1024" src="www/media/AppIcon1024.png" width="1024" />
-	</platform>
+		<icon height="1024" src="res/icon/ios/AppIcon1024.png" width="1024" />
     <!--
 		password phonegapbuild: 78TTh45Q07
         If you do not want any permissions to be added to your app, add the
