@@ -11,6 +11,17 @@
 		.contacto{}
 		.contacto input,.contacto textarea{width:80%;border:red solid 2px;padding:5px;margin:auto;display:block;margin-bottom:30px;}
 		.contacto textarea{height:40px;}
+		form label{font-weight:bold;display:block;text-align:left;font-size:13px;padding:5px;margin-top:10px;}
+		form input,form textarea,form select{width:90%;;display:block;border:1px solid #77aacc;margin:auto;padding:5px;}
+		form input{text-align:center;}
+		form div.agrupacion{padding:10px; border:1px dashed #999999;background-color:#dddddd;width:90%;margin:20px auto;}
+		button.activo,button.activo-r{display:block;width:90%;margin:10px auto 50px auto;padding:4px;}
+		button.b-l,button.b-r{display:block;width:40%;margin:10px auto 20px auto;padding:4px;float:left;}
+		form button.b-r{float:right;}
+		.acciones{width:95%;margin:auto;border:1px solid #dddddd;background-color:#eeeeee;}
+		.acciones .chat{float:left;width:75%;border:1px solid #dddddd;background-color:#ffffff;height:180px;}
+		.acciones .opciones{float:right;width:23%;}
+		.acciones .opciones button{width:100%;height:50px;}
 	</style>
     <script>
 	
@@ -40,7 +51,11 @@
 		}
 
 		function onDeviceReady() {
-			
+			var div1 = document.getElementById("seleccionar-ubicacion");
+			var map1 = plugin.google.maps.Map.getMap(div1);
+			var div2 = document.getElementById("mapa-actual");
+			var map2 = plugin.google.maps.Map.getMap(div2);
+			  
 		}
 
 		function Acceder(){
@@ -50,7 +65,7 @@
     </script>
 </head>
 <body onclick="onLoad();" style="margin:0px;height:100%;display:flex;text-align:center;">
-	<img src="media/logo.png" style="width:80%;display:block;margin:auto;margin-top:150px;;" onclick="IntercambioVisual(this,'pantalla1');"/>
+	<img src="media/logo.png" style="width:80%;display:none;margin:auto;margin-top:150px;;" onclick="IntercambioVisual(this,'pantalla1');"/>
 	
 	<div id="pantalla1" style="display:none;">		
 		 <img src="media/logo.png" style="width:60%;display:block;margin:auto;margin-top:20px;" />
@@ -76,15 +91,15 @@
 		<ul>
 			<li><button onclick="IntercambioVisual('pantalla4','pantalla5');">EVENTOS<img src="media/flecha.png"/></button></li>
 			<li><button onclick="IntercambioVisual('pantalla4','pantalla6');">COMUNIDAD<img src="media/flecha.png" /></button></li>
-			<li><button onclick="IntercambioVisual('pantalla4','pantalla7');">CARRERAS<img src="media/flecha.png" /></button></li>
-			<li><button onclick="IntercambioVisual('pantalla4','pantalla8');">MIS TIEMPOS<img src="media/flecha.png" /></button></li>
+			<li><button onclick="IntercambioVisual('pantalla4','pantalla7');">PROGRAMADAS<img src="media/flecha.png" /></button></li>
+			<li><button onclick="IntercambioVisual('pantalla4','pantalla8');">CARRERAS<img src="media/flecha.png" /></button></li>
 			<li><button onclick="IntercambioVisual('pantalla4','pantalla9');">MI GALERIA<img src="media/flecha.png" /></button></li>
 			<li><button onclick="IntercambioVisual('pantalla4','pantalla10');">CONTÁCTO<img src="media/flecha.png" /></button></li>
 		</ul>
 	</div>
 	
 	<div id="pantalla5" style="display:none;">		
-		<h2><button onclick="IntercambioVisual('pantalla5','pantalla4');"><img src="media/flecha.png" /><span>EVENTOS</span></button></h2>		
+		<h2><button onclick="IntercambioVisual('pantalla5','pantalla4');"><img src="media/flecha.png" /><span>EVENTOS GENERAL</span></button></h2>		
 		<ul class="submenu-cont">
 			<li><button class="big verde" onclick="IntercambioVisual('pantalla5','pantalla11');"><b>RODADA 22 DE AGOSTO</b><br/><span>PROXIMAMENTE(VER DETALLES)</span></button></li>
 			<li><button class="big amarillo"><b>RODADA 08 DE AGOSTO</b><br /><span>A TIEMPO(CONFIRMA TU ASISTENCIA)</span></button></li>
@@ -95,7 +110,7 @@
 	</div>
 	
 	<div id="pantalla6" style="display:none;">		
-		<h2><button  onclick="IntercambioVisual('pantalla6','pantalla4');" ><imgsrc="media/flecha.png" />COMUNIDAD</button></h2>
+		<h2><button  onclick="IntercambioVisual('pantalla6','pantalla4');" ><img src="media/flecha.png" />COMUNIDAD</button></h2>
 		<div class="posts submenu-cont">
 			<div class="post">
 				<b>Javier:</b><i></i>
@@ -118,23 +133,90 @@
 	</div>
 	
 	<div id="pantalla7" style="display:none;">		
-		<h2><button onclick="IntercambioVisual('pantalla7','pantalla4');" ><img src="media/flecha.png" />CARRERAS</button></h2>
-		
+		<h2><button onclick="IntercambioVisual('pantalla7','pantalla4');" ><img src="media/flecha.png" />PROGRAMADAS</button></h2>
+		<button class="activo" onclick="IntercambioVisual('pantalla7','pantalla7-1');" style="margin-top:60px;">CREAR NUEVA CARRERA</button>
+		<ul class="menu-intermedio">
+			<li><button onclick="IntercambioVisual('pantalla7','pantalla12');">CARRERA 15-JUL-2018</button></li>
+			<li><button>CARRERA 18-JUN-2018</button></li>
+			<li><button>CARRERA 05-JUN-2018</button></li>
+			<li><button>CARRERA 22-MAY-2018</button></li>
+		</ul>
+	</div>
+	
+	
+	<div id="pantalla7-1" style="display:none;">		
+		<h2><button onclick="IntercambioVisual('pantalla7-1','pantalla7');" ><img src="media/flecha.png" />CREAR CARRERA</button></h2>
+		<form onsubmit="return false;" style="margin-top:60px;">
+			<label>Tipo</label><select></select>
+			<label>Fecha y hora</label><input type="text"/>
+			<label>Organiza</label><input type="text"/>
+			<label>Lugar</label><input type="text"/>
+			<label>Mensaje</label><textarea></textarea>
+			<label>Costo $</label><input type="text"/>
+			<div class="agrupacion">
+				<button onclick="IntercambioVisual('pantalla7-1','pantalla7-1-1');" >Definir ubicación</button>			
+				<label>Link-Ubicación</label><textarea></textarea>
+			</div>
+			<div class="agrupacion">
+				<label>Invitar</label><button class="b-l">Seleccionar</button><button class="b-r">Público</button>
+				<hr style="clear:both;border:0px;"/>
+			</div>
+			<button class="activo-r">COMENZAR</button>
+		</form>
+	</div>
+	
+	<div id="pantalla7-1-1" style="display:none;">		
+		<h2><button onclick="IntercambioVisual('pantalla7-1-1','pantalla7-1');" ><img src="media/flecha.png" />DEFINIR UBICACIÓN</button></h2>
+		<div id="seleccionar-ubicacion">MAPA</div>
+	</div>
+	
+	<div id="pantalla7-1-2" style="display:none;">		
+		<h2><button onclick="IntercambioVisual('pantalla7-1-2','pantalla7-1');" ><img src="media/flecha.png" />INVITAR COMPETIDORES</button></h2>
+		<input placeholder="Buscar"/>
+		<ul class="lista-opciones" style="margin:20px;margin-top:0px;">
+			<li><b>XavierFC</b><input type="checkbox"/></li>
+			<li><b>MEMOAF16</b><input type="checkbox"/></li>
+			<li><b>jcg@gmail.com</b><input type="checkbox"/></li>
+			<li><b>Paulina3228</b><input type="checkbox"/></li>
+			<li><b>Cesar Martinez</b><input type="checkbox"/></li>
+		</ul>
+		<button class="activo">Continuar</button>
 	</div>
 	
 	<div id="pantalla8" style="display:none;">		
-		<h2><button onclick="IntercambioVisual('pantalla8','pantalla4');"><img src="media/flecha.png"  />MIS TIEMPOS</button></h2>
+		<h2><button onclick="IntercambioVisual('pantalla8','pantalla4');"><img src="media/flecha.png"  />CARRERAS</button></h2>
 		<ul class="menu-intermedio submenu-cont">
-			<li><button onclick="IntercambioVisual('pantalla8','pantalla12');">CARRERA 15-JUL-2018</button></li>
-			<li><button>CARRERA 18-JUN-2018</button></li>
+			<li><button class="activa" onclick="IntercambioVisual('pantalla8','pantalla8-1');" >EN ESTE MOMENTO</button></li>
+			<li><button onclick="IntercambioVisual('pantalla8','pantalla12');">CARRERA 18-JUN-2018</button></li>
 			<li><button>CARRERA 05-JUN-2018</button></li>
 			<li><button>CARRERA 22-MAY-2018</button></li>
 		</ul>
 		<img src="media/logo.png" style="width:60%;display:block;margin:auto;margin-top:20px;" />
 	</div>
 	
+	<div id="pantalla8-1" style="display:block;">		
+		<h2><button onclick="IntercambioVisual('pantalla8-1','pantalla8');" ><img src="media/flecha.png" />DATOS</button></h2>
+		<div id="mapa-actual" style="height:280px;"></div>
+		<div class="acciones">
+			<button class="activo">Comenzar</button>
+			<div class="chat" style="200px;overflow-y:auto;">
+				<ul style="padding:0px;list-style:none;margin:0px;height:600px;"></ul>
+			</div>
+			<div class="opciones">
+				<button>Detalle</button>
+				<button>Crono</button>
+				<button>Vueltas</button>
+			</div>
+			<hr style="border:0px;clear:both;"/>			
+		</div>		
+		<div class="enviar" style="display:block;position:absolute;bottom:5px;left:0px;">
+			<textarea style="display:block;width:75%;float:left;height:40px;"></textarea><button style="float:right;width:23%;display:block;height:50px;">Enviar</button>
+			<hr style="border:0px;clear:both;"/>
+		</div>
+	</div>
+	
 	<div id="pantalla9" style="display:none;">		
-		<h2><button onclick="IntercambioVisual('pantalla9','pantalla4');" ><img src="media/flecha.png" />GALERÍA</button></h2>
+		<h2><button onclick="IntercambioVisual('pantalla9','pantalla4');"><img src="media/flecha.png" />GALERÍA</button></h2>
 		<div class="galeria submenu-cont">
 			<img src="galeria/gal1.PNG" />
 			<img src="galeria/gal2.PNG" />
