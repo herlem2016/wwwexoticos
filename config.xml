@@ -30,7 +30,8 @@
     <!-- Plugins -->
 
 	<plugin name="https://github.com/mapsplugin/cordova-plugin-googlemaps.git" value="git">
-		<variable name="API_KEY_FOR_ANDROID" value="AIzaSyBJpc6VMiUvLNScXAkVYWIRt_1oUWHbq5I " />
+		<variable name="API_KEY_FOR_ANDROID" value="AIzaSyBJpc6VMiUvLNScXAkVYWIRt_1oUWHbq5I " />		
+        <variable name="PLAY_SERVICES_VERSION" value="11.8.0" />
 	</plugin>
 	
     <!-- Core plugins 
