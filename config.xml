@@ -32,6 +32,9 @@
     <!-- Plugins -->
 
     <plugin name="https://github.com/macdonst/VideoPlayer.git#3.0.0" value="git" />
+	<plugin name="https://github.com/mapsplugin/cordova-plugin-googlemaps.git#2.3.8" value="git">
+		<variable name="API_KEY_FOR_ANDROID" value="AIzaSyBJpc6VMiUvLNScXAkVYWIRt_1oUWHbq5I " />
+	</plugin>
 	
     <!-- Core plugins 
 	
