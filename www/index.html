@@ -1,60 +1,286 @@
-<!DOCTYPE html>
-<!--
-    Copyright (c) 2012-2016 Adobe Systems Incorporated. All rights reserved.
-
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
-<html>
-
+﻿<!DOCTYPE html>
+<html style="height:100%;">
 <head>
     <meta charset="utf-8" />
-    <meta name="format-detection" content="telephone=no" />
-    <meta name="msapplication-tap-highlight" content="no" />
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
-    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
-    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' gap:; style-src 'self' 'unsafe-inline'; media-src *" />
-    <!-- Good default declaration:
-    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
-    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
-    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
-        * Enable inline JS: add 'unsafe-inline' to default-src
-        * Enable eval(): add 'unsafe-eval' to default-src
-    * Create your own at http://cspisawesome.com
-    -->
-    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+    <title></title>
+    <link href="index.css" rel="stylesheet" />
+	<style>
+		h2{position:fixed;left:0px;top:0px;width:100%;}
+		.submenu-cont{margin-top:50px;}
+		div{width:100%;}
+		.contacto{}
+		.contacto input,.contacto textarea{width:80%;border:red solid 2px;padding:5px;margin:auto;display:block;margin-bottom:30px;}
+		.contacto textarea{height:40px;}
+		form label{font-weight:bold;display:block;text-align:left;font-size:13px;padding:5px;margin-top:10px;}
+		form input,form textarea,form select{width:90%;;display:block;border:1px solid #77aacc;margin:auto;padding:5px;}
+		form input{text-align:center;}
+		form div.agrupacion{padding:10px; border:1px dashed #999999;background-color:#dddddd;width:90%;margin:20px auto;}
+		button.activo,button.activo-r{display:block;width:90%;margin:10px auto 50px auto;padding:4px;}
+		button.b-l,button.b-r{display:block;width:40%;margin:10px auto 20px auto;padding:4px;float:left;}
+		form button.b-r{float:right;}
+		.acciones{width:95%;margin:auto;border:1px solid #dddddd;background-color:#eeeeee;}
+		.acciones .chat{float:left;width:75%;border:1px solid #dddddd;background-color:#ffffff;height:180px;}
+		.acciones .opciones{float:right;width:23%;}
+		.acciones .opciones button{width:100%;height:50px;}
+	</style>
+    <script>
+	
+		
+		function IntercambioVisual(obj1,obj2){
+			if( typeof(obj1)=="string"){
+				obj1= document.getElementById(obj1);
+			}
+			if(typeof(obj2)=="string"){
+				obj2= document.getElementById(obj2);
+			}
+			obj1.style.display="none";			
+			obj2.style.display="block";
+		}
+		
+		function onLoad() {			
+			document.addEventListener("deviceready", onDeviceReady, false);
+		}
+		
+		function OnEnter(e,callback){
+			if (!e) { var e = window.event; }
+			//e.preventDefault(); // sometimes useful
+			// Enter is pressed
+			if (e.keyCode == 13) { 
+				callback();
+			}			
+		}
 
-    <link rel="stylesheet" type="text/css" href="css/index.css" />
-    <title>Hello World</title>
-</head>
+		function onDeviceReady() {
+			var div1 = document.getElementById("seleccionar-ubicacion");
+			var map1 = plugin.google.maps.Map.getMap(div1);
+			var div2 = document.getElementById("mapa-actual");
+			var map2 = plugin.google.maps.Map.getMap(div2);
+			  
+		}
 
-<body>
-    <div class="app">
-        <h1>PhoneGap</h1>
-        <div id="deviceready" class="blink">
-            <p class="event listening">Connecting to Device</p>
-            <p class="event received">Device is Ready</p>
-        </div>
-    </div>
-    <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
-    <script type="text/javascript">
-        app.initialize();
+		function Acceder(){
+			
+		}
+		
     </script>
+</head>
+<body onclick="onLoad();" style="margin:0px;height:100%;display:flex;text-align:center;">
+	<img src="media/logo.png" style="width:80%;display:none;margin:auto;margin-top:150px;;" onclick="IntercambioVisual(this,'pantalla1');"/>
+	
+	<div id="pantalla1" style="display:none;">		
+		 <img src="media/logo.png" style="width:60%;display:block;margin:auto;margin-top:20px;" />
+		<div style="background:url(media/pedal1.png);background-size:contain;height:250px;width:80%;margin:auto;margin-top:20px;background-repeat:no-repeat;padding-top:50px;">
+			<input onkeypress="OnEnter(event,function(){IntercambioVisual('pantalla1','pantalla2')});" type="text" style="width:80%;margin:50px auto;display:block;border:0px;padding:6px;border-radius:5px;border:2px solid #ff0000;" placeholder="Ingrese usuario"/>
+		</div>
+	</div>
+	
+	<div id="pantalla2" style="display:none;">		
+		 <img src="media/logo.png" style="width:60%;display:block;margin:auto;margin-top:20px;" />
+		<div style="background:url(media/pedal2.png);background-size:contain;height:250px;width:80%;margin:auto;margin-top:20px;background-repeat:no-repeat;padding-top:50px;">
+			<input  onkeypress="OnEnter(event,function(){IntercambioVisual('pantalla2','pantalla3')});" type="text" style="width:80%;margin:50px auto;display:block;border:0px;padding:6px;border-radius:5px;border:2px solid #ff0000;" placeholder="Contraseña" />
+		</div>
+	</div>
+	
+	<div id="pantalla3" style="display:none;">		
+		<img src="media/logo.png" style="width:60%;display:block;margin:auto;margin-top:20px;" />
+		<button onclick="IntercambioVisual('pantalla3','pantalla4');" style="background:url(media/pedal3.png);background-size:contain;height:250px;width:80%;margin:auto;margin-top:20px;background-repeat:no-repeat;background-position:center;padding-top:50px;border:0px;" onclick="Acceder();">Acceder</button>
+	</div>
+	
+	<div id="pantalla4" style="display:none;">	
+		<img src="media/logo.png" style="width:60%;display:block;margin:auto;margin-top:20px;" />
+		<ul>
+			<li><button onclick="IntercambioVisual('pantalla4','pantalla5');">EVENTOS<img src="media/flecha.png"/></button></li>
+			<li><button onclick="IntercambioVisual('pantalla4','pantalla6');">COMUNIDAD<img src="media/flecha.png" /></button></li>
+			<li><button onclick="IntercambioVisual('pantalla4','pantalla7');">PROGRAMADAS<img src="media/flecha.png" /></button></li>
+			<li><button onclick="IntercambioVisual('pantalla4','pantalla8');">CARRERAS<img src="media/flecha.png" /></button></li>
+			<li><button onclick="IntercambioVisual('pantalla4','pantalla9');">MI GALERIA<img src="media/flecha.png" /></button></li>
+			<li><button onclick="IntercambioVisual('pantalla4','pantalla10');">CONTÁCTO<img src="media/flecha.png" /></button></li>
+		</ul>
+	</div>
+	
+	<div id="pantalla5" style="display:none;">		
+		<h2><button onclick="IntercambioVisual('pantalla5','pantalla4');"><img src="media/flecha.png" /><span>EVENTOS GENERAL</span></button></h2>		
+		<ul class="submenu-cont">
+			<li><button class="big verde" onclick="IntercambioVisual('pantalla5','pantalla11');"><b>RODADA 22 DE AGOSTO</b><br/><span>PROXIMAMENTE(VER DETALLES)</span></button></li>
+			<li><button class="big amarillo"><b>RODADA 08 DE AGOSTO</b><br /><span>A TIEMPO(CONFIRMA TU ASISTENCIA)</span></button></li>
+			<li><button class="big rojo"><b>TRACK DAY 28 DE JULIO</b><br /><span>EVENTO FINALIZADO(VER GALERÍA)</span></button></li>
+			<li><button class="big rojo"><b>TRACK DAY 06 DE JULIO</b><br /><span>EVENTO FINALIZADO(VER GALERÍA)</span></button></li>
+			<li><button class="vermas"><img src="media/Vermas.png"/></button></li>
+		</ul>
+	</div>
+	
+	<div id="pantalla6" style="display:none;">		
+		<h2><button  onclick="IntercambioVisual('pantalla6','pantalla4');" ><img src="media/flecha.png" />COMUNIDAD</button></h2>
+		<div class="posts submenu-cont">
+			<div class="post">
+				<b>Javier:</b><i></i>
+				<p>Aquí limpiando y dejando todo listo para mañana, allá nos vemos.. :) :)</p>
+				<img src="media/comu.png" />
+			</div>
+			<div class="post">
+				<b>Alán</b><i>escribió:</i>
+				<div class="media"></div>
+				<p>Yo apenas voy a empezar</p>
+			</div>
+			<button class="vermas"><img src="media/Vermas.png" /></button>
+		</div>
+		<div class="frm-publicar">
+			<h3>Publicar</h3>
+			<div>
+				<input />
+			</div>
+		</div>
+	</div>
+	
+	<div id="pantalla7" style="display:none;">		
+		<h2><button onclick="IntercambioVisual('pantalla7','pantalla4');" ><img src="media/flecha.png" />PROGRAMADAS</button></h2>
+		<button class="activo" onclick="IntercambioVisual('pantalla7','pantalla7-1');" style="margin-top:60px;">CREAR NUEVA CARRERA</button>
+		<ul class="menu-intermedio">
+			<li><button onclick="IntercambioVisual('pantalla7','pantalla12');">CARRERA 15-JUL-2018</button></li>
+			<li><button>CARRERA 18-JUN-2018</button></li>
+			<li><button>CARRERA 05-JUN-2018</button></li>
+			<li><button>CARRERA 22-MAY-2018</button></li>
+		</ul>
+	</div>
+	
+	
+	<div id="pantalla7-1" style="display:none;">		
+		<h2><button onclick="IntercambioVisual('pantalla7-1','pantalla7');" ><img src="media/flecha.png" />CREAR CARRERA</button></h2>
+		<form onsubmit="return false;" style="margin-top:60px;">
+			<label>Tipo</label><select></select>
+			<label>Fecha y hora</label><input type="text"/>
+			<label>Organiza</label><input type="text"/>
+			<label>Lugar</label><input type="text"/>
+			<label>Mensaje</label><textarea></textarea>
+			<label>Costo $</label><input type="text"/>
+			<div class="agrupacion">
+				<button onclick="IntercambioVisual('pantalla7-1','pantalla7-1-1');" >Definir ubicación</button>			
+				<label>Link-Ubicación</label><textarea></textarea>
+			</div>
+			<div class="agrupacion">
+				<label>Invitar</label><button class="b-l">Seleccionar</button><button class="b-r">Público</button>
+				<hr style="clear:both;border:0px;"/>
+			</div>
+			<button class="activo-r">COMENZAR</button>
+		</form>
+	</div>
+	
+	<div id="pantalla7-1-1" style="display:none;">		
+		<h2><button onclick="IntercambioVisual('pantalla7-1-1','pantalla7-1');" ><img src="media/flecha.png" />DEFINIR UBICACIÓN</button></h2>
+		<div id="seleccionar-ubicacion">MAPA</div>
+	</div>
+	
+	<div id="pantalla7-1-2" style="display:none;">		
+		<h2><button onclick="IntercambioVisual('pantalla7-1-2','pantalla7-1');" ><img src="media/flecha.png" />INVITAR COMPETIDORES</button></h2>
+		<input placeholder="Buscar"/>
+		<ul class="lista-opciones" style="margin:20px;margin-top:0px;">
+			<li><b>XavierFC</b><input type="checkbox"/></li>
+			<li><b>MEMOAF16</b><input type="checkbox"/></li>
+			<li><b>jcg@gmail.com</b><input type="checkbox"/></li>
+			<li><b>Paulina3228</b><input type="checkbox"/></li>
+			<li><b>Cesar Martinez</b><input type="checkbox"/></li>
+		</ul>
+		<button class="activo">Continuar</button>
+	</div>
+	
+	<div id="pantalla8" style="display:none;">		
+		<h2><button onclick="IntercambioVisual('pantalla8','pantalla4');"><img src="media/flecha.png"  />CARRERAS</button></h2>
+		<ul class="menu-intermedio submenu-cont">
+			<li><button class="activa" onclick="IntercambioVisual('pantalla8','pantalla8-1');" >EN ESTE MOMENTO</button></li>
+			<li><button onclick="IntercambioVisual('pantalla8','pantalla12');">CARRERA 18-JUN-2018</button></li>
+			<li><button>CARRERA 05-JUN-2018</button></li>
+			<li><button>CARRERA 22-MAY-2018</button></li>
+		</ul>
+		<img src="media/logo.png" style="width:60%;display:block;margin:auto;margin-top:20px;" />
+	</div>
+	
+	<div id="pantalla8-1" style="display:block;">		
+		<h2><button onclick="IntercambioVisual('pantalla8-1','pantalla8');" ><img src="media/flecha.png" />DATOS</button></h2>
+		<div id="mapa-actual" style="height:280px;"></div>
+		<div class="acciones">
+			<button class="activo">Comenzar</button>
+			<div class="chat" style="200px;overflow-y:auto;">
+				<ul style="padding:0px;list-style:none;margin:0px;height:600px;"></ul>
+			</div>
+			<div class="opciones">
+				<button>Detalle</button>
+				<button>Crono</button>
+				<button>Vueltas</button>
+			</div>
+			<hr style="border:0px;clear:both;"/>			
+		</div>		
+		<div class="enviar" style="display:block;position:absolute;bottom:5px;left:0px;">
+			<textarea style="display:block;width:75%;float:left;height:40px;"></textarea><button style="float:right;width:23%;display:block;height:50px;">Enviar</button>
+			<hr style="border:0px;clear:both;"/>
+		</div>
+	</div>
+	
+	<div id="pantalla9" style="display:none;">		
+		<h2><button onclick="IntercambioVisual('pantalla9','pantalla4');"><img src="media/flecha.png" />GALERÍA</button></h2>
+		<div class="galeria submenu-cont">
+			<img src="galeria/gal1.PNG" />
+			<img src="galeria/gal2.PNG" />
+			<img src="galeria/gal3.PNG" />
+			<img src="galeria/gal4.PNG" />
+			<img src="galeria/gal5.PNG" />
+			<img src="galeria/gal6.PNG" />
+			<img src="galeria/gal7.PNG" />
+			<img src="galeria/gal8.PNG" />
+			<img src="galeria/gal9.PNG" />
+		</div>
+	</div>
+	
+	<div id="pantalla10" style="display:none;">		
+		<h2><button onclick="IntercambioVisual('pantalla10','pantalla4');"><img src="media/flecha.png"  />CONTACTO</button></h2>
+		<div class=" submenu-cont contacto">
+			<input placeholder="Nombre" style="margin-top:100px;"/>
+			<input placeholder="E-mail" />
+			<label>Escriba su mensaje</label>
+			<textarea></textarea>
+		</div>
+	</div>
+	
+	<div id="pantalla11" style="display:none;">		
+		<h2 style="margin-bottom:0px;"><button onclick="IntercambioVisual('pantalla11','pantalla4');" ><img src="media/flecha.png" />CARRERA 05-JUN-18</button></h2>
+		<img src="media/rodada.png" style="width:100%;margin:0px;" />
+		<ul class="menu-intermedio submenu-cont" style="margin:20px;margin-top:0px;">
+			<li><b>FECHA:</b><i>SABADO 05 DE JUNIO DEL 2018</i></li>
+			<li><b>LUGAR:</b><i>AUTODROMO DE PUEBLA</i></li>
+			<li><b>HORARIO:</b><i>09:00 HRS</i></li>
+			<li><b>COSTO:</b><i>$ 15,00.00 PESOS</i></li>
+			<li><b>DETALLES:</b><i>6</i></li>
+			<li><b>LINK UBICACIÓN:</b><i>https://maps.google.com/x=0.00084165&y=658654165.05</i></li>
+			<li><button>CONFIRMAR SOLO ASISTENCIA</button></li>
+			<li><button>CONFIRMAR ASISTENCIA Y CONFIRMAR PAGO</button></li>
+		</ul>
+		<img src="media/logo.png" style="width:60%;display:block;margin:auto;margin-top:20px;" />
+	</div>
+	
+	<div id="pantalla12" style="display:none;">		
+		<h2><button onclick="IntercambioVisual('pantalla12','pantalla8');" ><img src="media/flecha.png"  />CARRERA 05-JUN-18</button></h2>
+		<ul class="menu-intermedio submenu-cont" style="margin:20px;">
+			<li><b>FECHA:</b><i>SABADO 05 DE JUNIO DEL 2018</i></li>
+			<li><b>LUGAR:</b><i>AUTODROMO DE PUEBLA</i></li>
+			<li><b>HORARIO:</b><i>09:00 HRS</i></li>
+			<li><b>COSTO:</b><i>$ 15,00.00 PESOS</i></li>
+			<li><b>DETALLES:</b><i>6</i></li>
+			<li><b>LINK UBICACIÓN:</b><i>https://maps.google.com/x=0.00084165&y=658654165.05</i></li>
+			<li><b>VUELTA 1:</b><i>00:05:34</i></li>
+			<li><b>VUELTA 2:</b><i>00:05:28</i></li>
+			<li><b>VUELTA 3:</b><i>00:05:40</i></li>
+			<li><b>VUELTA 4:</b><i>00:05:15</i></li>
+			<li><b>VUELTA 5:</b><i>00:05:32</i></li>
+			<li><b>VUELTA 6:</b><i>00:05:23</i></li>
+			<li><b>TIEMPO TOTAL:</b><i>00:32:52</i></li>
+		</ul>
+		<img src="media/logo.png" style="width:60%;display:block;margin:auto;margin-top:20px;" />
+	</div>
+	
+	<div id="pantalla13" style="display:none;">		
+		
+	</div>
+	
 </body>
-
 </html>
+
+
